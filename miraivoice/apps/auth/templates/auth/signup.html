@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>新規登録</title>
+<link rel="stylesheet" href="{{ url_for('auth.static', filename='style.css') }}">
+
+</head>
+<body>
+<div class="screen">
+    <h2>新規登録画面</h2>
+    <form action="{{ url_for('auth.signup') }}" method="post">
+        <input type="text" name="name" placeholder="名前" required> <!--requiredは入力必須項目（入力しないと注意が出る）-->
+        <input type="email" name="email" placeholder="メールアドレス" required>
+        <input type="password" name="password" placeholder="パスワード" required>
+        <button style="background-color: #02adfa;" type="submit">登録</button>
+    </form>
+    <a href="{{ url_for('auth.index') }}">戻る</a>
+</div>
+</body>
+</html>

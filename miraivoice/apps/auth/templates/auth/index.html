@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ミライボイス</title>
+<link rel="stylesheet" href="{{ url_for('auth.static', filename='style.css') }}">
+</head>
+<body>
+<div class="screen">
+    <h2>ミライボイスへようこそ</h2>
+    <button class="signup" style="background-color: #02adfa;" onclick="location.href='{{ url_for('auth.signup') }}'">新規登録</button>
+    <button class="login" style="background-color: #02adfa;" onclick="location.href='{{ url_for('auth.login') }}'">ログイン</button>
+    <!-- <p class="a" style="color: red;" >アカウントをすでにお持ちの方</p> -->
+</div>
+</body>
+</html>

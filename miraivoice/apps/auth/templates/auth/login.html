@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ログイン</title>
+  <link rel="stylesheet" href="{{ url_for('auth.static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="login-container">
+  <h2>ログイン画面</h2>
+  <form id="loginForm">
+    <input type="email" id="email" name="email" placeholder="メールアドレス" required>
+    <input type="password" id="password" name="password" placeholder="パスワード" required>
+    <button style="background-color: #02adfa;" type="submit">ログイン</button>
+    <p id="errorMessage" class="error"></p>
+  </form>
+  <a href="{{ url_for('auth.index') }}">戻る</a>
+</div>
