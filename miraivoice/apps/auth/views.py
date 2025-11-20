@@ -36,6 +36,13 @@ def signup():
             flash("このメールアドレスはすでに登録されています。")
             return redirect(url_for("auth.signup"))
 
+        # パスワード制限チェック
+        # 8文字以上、英字 + 数字 + 記号
+        password_regex = r'^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};\'":\\|,.<>\/?]).{8,}$'
+        if not re.match(password_regex, password):
+            flash("パスワードは8文字以上で、半角英数字と記号を含めてください。")
+            return redirect(url_for("auth.signup"))
+
         # パスワードをハッシュ化して保存
         hashed_password = generate_password_hash(password)
         new_user = User(name=name, email=email, password=hashed_password)
